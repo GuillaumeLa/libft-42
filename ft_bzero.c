@@ -15,5 +15,8 @@ void bzero(void *s, unsigned int n)
     i = 0;
 
     while(str[i] && i != n)
+    {
+        str[i] = '\n';
+    }
 }
 

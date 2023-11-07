@@ -9,5 +9,15 @@
 /*   Updated: 2023/11/06 11:01:42 by glabaden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+void *memcpy(void *dest, const void *src, size_t count)
+{
+    int  i;
 
+    i = 0;
+    while(src[i] && count != i)
+    {
+        dest[i] = src[i];
+        i++;
+    }
+}
 
