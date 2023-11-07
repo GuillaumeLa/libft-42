@@ -9,5 +9,11 @@
 /*   Updated: 2023/11/06 10:58:45 by glabaden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+void bzero(void *s, unsigned int n)
+{
+    unsigned int i;
+    i = 0;
 
+    while(str[i] && i != n)
+}
 

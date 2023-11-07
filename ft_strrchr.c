@@ -10,4 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+char *strrchr(const char *s, int c)
+{
+    int buffer 
+    buffer = 0
+    while(str[i])
+    {
+        if(str[i] == c)
+            buffer = i;
+        i++;
+    }
+    if(buffer == 0)
+        return (0);
+    return buffer
 
+}
