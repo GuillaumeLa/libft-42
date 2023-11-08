@@ -9,15 +9,17 @@
 /*   Updated: 2023/11/06 11:01:42 by glabaden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void *memcpy(void *dest, const void *src, size_t count)
+void *ft_memcpy(void *dest, const void *src, unsigned int count)
 {
-    int  i;
+    unsigned int  i;
 
     i = 0;
-    while(src[i] && count != i)
+    char *dest_pointed = (char *) dest;
+    char *src_pointed = (char *) src;
+    while(src_pointed[i] && count != i)
     {
-        dest[i] = src[i];
+        dest_pointed[i] = src_pointed[i];
         i++;
     }
+    return dest;
 }
-

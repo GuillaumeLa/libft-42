@@ -10,7 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void * memset( void * pointer, int value, size_t count )
+void * ft_memset( void * pointer, int value, unsigned int count )
 {
-    
+    unsigned int  i;
+
+    i = 0;
+    char *dest_pointed = (char *) pointer;
+    while(dest_pointed[i] && count != i)
+    {
+        dest_pointed[i] = value;
+        i++;
+    }
+    return pointer;
 }
