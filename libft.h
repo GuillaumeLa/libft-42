@@ -20,11 +20,11 @@ void *calloc( unsigned int elementCount, unsigned int elementSize);
 int	ft_isascii(int c);
 char *ft_itoa(int n); 
 void *ft_memcpy(void *dest, const void *src, unsigned int count);
-ft_split.c   
+char **ft_split(char const *s, char c); 
 void ft_striteri(char *s, void (*f)(unsigned int, char*));
-ft_memchr.c  
-ft_memmove.c  
-ft_memcmp.c  
+void *memchr(const void *s, int c, size_t n);
+void *memmove(void *dest, const void *src, size_t n);
+int memcmp(const void *s1, const void *s2, size_t n);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 unsigned int strlcpy(char *dest, const char *src, unsigned int size);
 int strncmp(const char *s1, const char *s2, unsigned int n);
