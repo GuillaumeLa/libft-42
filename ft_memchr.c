@@ -10,4 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
+void *memchr(const void *s, int c, size_t n)
+{
+    char *s_point = (char *) s;
+    int i;
+    i = 0;
+    while(i != n)
+    {
+        
+    }
+    return s;
+}
