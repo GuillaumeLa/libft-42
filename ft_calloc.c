@@ -16,7 +16,7 @@ void *ft_calloc( unsigned int elementCount, unsigned int elementSize )
 {
 	void	*p;
 
-	p = malloc(elementCount * elementSize);
+	p = malloc(elementCount  * elementSize );
 	if(p == 0)
 		return (0);
 	ft_memset(p,0,elementCount * elementSize);
