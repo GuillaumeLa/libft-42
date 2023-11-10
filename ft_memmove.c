@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memmove(void *dest, const void *src, unsigned int n)
-{
+// void *ft_memmove(void *dest, const void *src, unsigned int n)
+// {
     
-}
+// }
 

@@ -13,8 +13,9 @@
 #include "libft.h"
 void *ft_memcpy(void *dest, const void *src, unsigned int count)
 {
+	if(!src)
+		return 0;
 	unsigned int  i;
-
 	i = 0;
 	char *dest_pointed = (char *) dest;
 	char *src_pointed = (char *) src;

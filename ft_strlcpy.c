@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int strlcpy(char *dest, const char *src, unsigned int size)
+#include "libft.h" 
+
+unsigned int ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
 	unsigned int i;
 	unsigned int j;
-
 	i = 0;
 	j = 0;
 	while (src[i] != '\0') {
@@ -24,6 +25,7 @@ unsigned int strlcpy(char *dest, const char *src, unsigned int size)
 		}
 		i++;
 	}
-	dest[j] = '\0';
+	if (size != 0)
+		dest[j] = '\0';
 	return (i);
 }
