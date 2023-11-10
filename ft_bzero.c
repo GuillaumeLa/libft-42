@@ -16,11 +16,11 @@ void	ft_bzero(void *s, unsigned int n)
 	unsigned int i;
 	char *str = (char *)s;
 	i = 0;
-	while (str[i] && i != n)
+	while (i < n)
 	{
-		str[i] = '\0';
+		str[i] = '\n';
 		i++;
 	}
-
+		
 }
 
