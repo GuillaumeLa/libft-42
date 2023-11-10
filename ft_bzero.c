@@ -18,7 +18,7 @@ void	ft_bzero(void *s, unsigned int n)
 	i = 0;
 	while (i < n)
 	{
-		str[i] = '\n';
+		str[i] = '\0';
 		i++;
 	}
 		
