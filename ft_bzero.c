@@ -9,14 +9,14 @@
 /*   Updated: 2023/11/06 10:58:45 by glabaden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void bzero(void *s, unsigned int n)
-{
-    unsigned int i;
-    i = 0;
 
-    while(str[i] && i != n)
-    {
-        str[i] = '\n';
-    }
+#include "libft.h"
+void	ft_bzero(void *s, unsigned int n)
+{
+	unsigned int i;
+	char *str = (char *)s;
+	i = 0;
+	while (str[i] && i != n)
+		str[i] = '\n';
 }
 

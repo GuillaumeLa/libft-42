@@ -10,14 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memchr(const void *s, int c, size_t n)
+#include "libft.h"
+void *ft_memchr(const void *s, int c, unsigned int n)
 {
-    char *s_point = (char *) s;
-    int i;
-    i = 0;
-    while(i != n)
-    {
-        
-    }
-    return s;
+	char *s_point = (char *) s;
+	unsigned int i;
+	i = 0;
+	while(i != n)
+	{
+		if (s_point[i] == c)
+			return (s_point + i);
+	}
+	return (0);
 }

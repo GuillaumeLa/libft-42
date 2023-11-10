@@ -9,8 +9,10 @@
 /*   Updated: 2023/11/06 11:00:13 by glabaden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int memcmp(const void *s1, const void *s2, size_t n)
-{
+
+#include "libft.h"
+// int ft_memcmp(const void *s1, const void *s2, size_t n)
+// {
     
-}
+// }
 

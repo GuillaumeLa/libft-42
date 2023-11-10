@@ -13,21 +13,21 @@
 
 char *ft_substr(char const *s, unsigned int start,unsigned int len)
 {
-    unsigned int i;
-    unsigned int count;
-    char *result;
+	unsigned int i;
+	unsigned int count;
+	char *result;
 
-    i = 0;
-    count = 0;
-    result = (char *)malloc(len * sizeof(char))
-    while(s[i])
-    {
-        if(i <= start && len != count)
-        {
-            result[count] = s[i];
-            count++;
-        }
-        i++;
-    }
-    return (result);
+	i = 0;
+	count = 0;
+	result = (char *)malloc(len * sizeof(char));
+	while(s[i])
+	{
+		if(i <= start && len != count)
+		{
+			result[count] = s[i];
+			count++;
+		}
+		i++;
+	}
+	return (result);
 }

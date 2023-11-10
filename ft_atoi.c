@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_atoi(char *str)
 {
 	int	i;
@@ -24,7 +26,7 @@ int	ft_atoi(char *str)
 	{
 		i++;
 		if (str[i] == 45)
-			signe = 1
+			signe = 1;
 	}
 	while (str[i] <= 48 && str[i] >= 57)
 	{
@@ -32,6 +34,6 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	if (signe == 1)
-		return (result * -1)
-	return (result)
+		return (result * -1);
+	return (result);
 }

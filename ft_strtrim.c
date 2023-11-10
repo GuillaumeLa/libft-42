@@ -14,52 +14,52 @@
 
 static int ft_inset(char charac,char const *set)
 {
-    int i; 
-    i = 0;
-    while(set[i])
-    {
-        if(set[i] == charac)
-            return (1);
-        i++;
-    }
-    return (0);
+	int i; 
+	i = 0;
+	while(set[i])
+	{
+		if(set[i] == charac)
+			return (1);
+		i++;
+	}
+	return (0);
 }
 static int ft_count_charinset(char const *s1, char const *set)
 {
-    int i;
-    int count;
+	int i;
+	int count;
 
-    i = 0;
-    count = 0;
-    while(s1[i])
-    {
-        
-        if(!ft_inset(s1[i],set))
-            count++;
-        i++;
-    }
-    return (count);
+	i = 0;
+	count = 0;
+	while(s1[i])
+	{
+		
+		if(!ft_inset(s1[i],set))
+			count++;
+		i++;
+	}
+	return (count);
 }
 char *ft_strtrim(char const *s1, char const *set)
 {
-    int sizenew;
-    int j;
-    int i;
-    char *result;
+	int sizenew;
+	int j;
+	int i;
+	char *result;
 
-    i = 0;
-    j = 0;
-    sizenew = ft_count_charinset(s1 ,set);
+	i = 0;
+	j = 0;
+	sizenew = ft_count_charinset(s1 ,set);
 
-    result = (char *) malloc(sizenew * sizeof(char));
-    while(s1[i])
-    {
-        if(!ft_inset(s1[i],set))
-        {
-            result[j] = s1[i];
-            j++;
-        }
-        i++;
-    }
-    return result;
+	result = (char *) malloc(sizenew * sizeof(char));
+	while(s1[i])
+	{
+		if(!ft_inset(s1[i],set))
+		{
+			result[j] = s1[i];
+			j++;
+		}
+		i++;
+	}
+	return result;
 }

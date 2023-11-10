@@ -9,14 +9,15 @@
 /*   Updated: 2023/11/06 11:02:33 by glabaden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int strncmp(const char *s1, const char *s2, unsigned int n)
+int ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
-    unsigned int i;
-    i = 0;
-    while((s1[i] || s2[i]) && n != i)
-    {
-        if(s1[i] != s2[i])
-            return (s1[i] - s2[i])
-        i++;
-    }
+	unsigned int i;
+	i = 0;
+	while((s1[i] || s2[i]) && n != i)
+	{
+		if(s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return 0;
 }
