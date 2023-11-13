@@ -17,7 +17,7 @@ void	*ft_memset( void * pointer, int value, unsigned int count )
 
 	i = 0;
 	char *dest_pointed = (char *) pointer;
-	while(dest_pointed[i] && count != i)
+	while(count != i)
 	{
 		dest_pointed[i] = value;
 		i++;

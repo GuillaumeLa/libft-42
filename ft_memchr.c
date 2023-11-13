@@ -18,8 +18,9 @@ void *ft_memchr(const void *s, int c, unsigned int n)
 	i = 0;
 	while(i != n)
 	{
-		if (s_point[i] == c)
-			return (s_point + i);
+		if (s_point[i] == (char) c)
+			return ((void * )(s_point + i));
+		i++;
 	}
 	return (0);
 }
