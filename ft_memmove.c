@@ -10,12 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// void *ft_memmove(void *dest, const void *src, unsigned int n)
-// {
-//     unsigned int i;
-//     if(!src && !dest)
-// 		return 0;
-//     i = 0;
-//     if()
-// }
+void *ft_memmove(void *dest, const void *src, unsigned int n)
+{
+    unsigned int i;
+    unsigned char *dest_point = dest;
+    const unsigned char *src_point = src;
+    i = 0;
+
+    if(dest_point < src_point)
+    {
+        while(n != 0)
+        {
+            dest_point[i] = src_point[i];
+            i++;
+            n--;
+        }
+    }
+    else
+    {
+        while(n != 0)
+        {
+            dest_point[n] = src_point[n];
+            n--; 
+        }
+    }
+    return dest;
+}
 
