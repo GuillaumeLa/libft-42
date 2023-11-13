@@ -12,6 +12,10 @@
 
 // void *ft_memmove(void *dest, const void *src, unsigned int n)
 // {
-    
+//     unsigned int i;
+//     if(!src && !dest)
+// 		return 0;
+//     i = 0;
+//     if()
 // }
 

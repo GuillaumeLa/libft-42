@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include <stdlib.h>
 
-char *ft_substr(char const *s, unsigned int start,unsigned int len)
+char *ft_substr(char const *str, unsigned int start,unsigned int len)
 {
 	unsigned int i;
 	unsigned int count;
@@ -19,15 +19,18 @@ char *ft_substr(char const *s, unsigned int start,unsigned int len)
 
 	i = 0;
 	count = 0;
-	result = (char *)malloc(len * sizeof(char));
-	while(s[i])
+	result = (char *)malloc((len + 1) * sizeof(char));
+	if(!str || !result)
+		return 0;
+	while(str[i])
 	{
 		if(i <= start && len != count)
 		{
-			result[count] = s[i];
+			result[count] = str[i];
 			count++;
 		}
 		i++;
 	}
+	result[count] = 0;
 	return (result);
 }
