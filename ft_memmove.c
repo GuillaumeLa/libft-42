@@ -31,11 +31,8 @@ void	*ft_memmove(void *dest, const void *src, unsigned int n)
 	}
 	else
 	{
-		while (n != 0)
-		{
-			n--;
+		while (n-- != 0)
 			dest_point[n] = src_point[n];
-		}
 	}
 	return (dest);
 }
