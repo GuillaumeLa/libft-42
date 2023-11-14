@@ -21,8 +21,9 @@ void	*ft_calloc( size_t elementCount, size_t elementSize )
 		elementCount = 1;
 		elementSize = 1;
 	}
-	if (elementCount > 65535 || elementSize > 65535 || elementCount * elementSize > 65535)
-        return (NULL);
+	if (elementCount > 65535 || elementSize > 65535
+		|| elementCount * elementSize > 65535)
+		return (NULL);
 	p = malloc(elementCount * elementSize);
 	if (p == NULL)
 		return (NULL);

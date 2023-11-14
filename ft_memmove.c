@@ -19,8 +19,8 @@ void	*ft_memmove(void *dest, const void *src, unsigned int n)
 	i = 0;
 	dest_point = dest;
 	src_point = src;
-	if(!dest && !src)
-		return 0;
+	if (!dest && !src)
+		return (0);
 	if (dest_point < src_point)
 	{
 		while (n != i)
