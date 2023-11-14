@@ -9,10 +9,10 @@
 /*   Updated: 2023/11/06 11:02:56 by glabaden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char    *ft_strnstr(char *str, char *to_find, int n)
+char	*ft_strnstr(char *str, char *to_find, int n)
 {
-	int    i;
-	int    j;
+	int	i;
+	int	j;
 
 	i = 0;
 	if (!to_find[0])
@@ -22,7 +22,7 @@ char    *ft_strnstr(char *str, char *to_find, int n)
 	while (str[i] && i != n)
 	{
 		j = 0;
-		while (str[i + j] == to_find[j]  && (i + j) != n)
+		while (str[i + j] == to_find[j] && (i + j) != n)
 		{
 			j++;
 			if (!to_find[j])
@@ -32,4 +32,3 @@ char    *ft_strnstr(char *str, char *to_find, int n)
 	}
 	return (0);
 }
-

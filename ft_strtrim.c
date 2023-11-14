@@ -12,50 +12,52 @@
 
 #include <stdlib.h>
 
-static int ft_inset(char charac,char const *set)
+static int	ft_inset(char charac, char const *set)
 {
-	int i; 
+	int	i;
+
 	i = 0;
-	while(set[i])
+	while (set[i])
 	{
-		if(set[i] == charac)
+		if (set[i] == charac)
 			return (1);
 		i++;
 	}
 	return (0);
 }
-static int ft_count_charinset(char const *s1, char const *set)
+
+static int	ft_count_charinset(char const *s1, char const *set)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
-	while(s1[i])
+	while (s1[i])
 	{
-		
-		if(!ft_inset(s1[i],set))
+		if (!ft_inset(s1[i], set))
 			count++;
 		i++;
 	}
 	return (count);
 }
-char *ft_strtrim(char const *s1, char const *set)
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int sizenew;
-	int j;
-	int i;
-	char *result;
+	int		sizenew;
+	int		j;
+	int		i;
+	char	*result;
 
 	i = 0;
 	j = 0;
-	sizenew = ft_count_charinset(s1 ,set);
-	result = (char *) malloc(sizenew + 1* sizeof(char));
-	if(!result)
-		return 0;
-	while(s1[i])
+	sizenew = ft_count_charinset(s1, set);
+	result = (char *) malloc(sizenew + 1 * sizeof(char));
+	if (!result)
+		return (0);
+	while (s1[i])
 	{
-		if(!ft_inset(s1[i],set))
+		if (!ft_inset(s1[i], set))
 		{
 			result[j] = s1[i];
 			j++;
@@ -63,5 +65,5 @@ char *ft_strtrim(char const *s1, char const *set)
 		i++;
 	}
 	result[j] = '\0';
-	return result;
+	return (result);
 }
