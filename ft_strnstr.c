@@ -9,16 +9,20 @@
 /*   Updated: 2023/11/06 11:02:56 by glabaden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strnstr(char *str, char *to_find, int n)
+
+#include "libft.h"
+
+char	*ft_strnstr(const char *str,const char *to_find, size_t n)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	if (!to_find[0])
-		return (str);
-	if (!str[0])
+	if (!str && n == 0)
 		return (0);
+	if (!to_find[0])
+		return ((char *)str);
+
 	while (str[i] && i != n)
 	{
 		j = 0;
@@ -26,7 +30,7 @@ char	*ft_strnstr(char *str, char *to_find, int n)
 		{
 			j++;
 			if (!to_find[j])
-				return (str + i);
+				return ((char *)str + i);
 		}
 		i++;
 	}

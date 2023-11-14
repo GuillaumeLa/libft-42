@@ -19,21 +19,22 @@ void	*ft_memmove(void *dest, const void *src, unsigned int n)
 	i = 0;
 	dest_point = dest;
 	src_point = src;
+	if(!dest && !src)
+		return 0;
 	if (dest_point < src_point)
 	{
-		while (n != 0)
+		while (n != i)
 		{
 			dest_point[i] = src_point[i];
 			i++;
-			n--;
 		}
 	}
 	else
 	{
 		while (n != 0)
 		{
-			dest_point[n] = src_point[n];
 			n--;
+			dest_point[n] = src_point[n];
 		}
 	}
 	return (dest);

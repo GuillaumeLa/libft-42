@@ -10,18 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// char *ft_strrchr(const char *s, int c)
-// {
-// 	int buffer ;
-// 	buffer = 0;
-// 	while(s[i])
-// 	{
-// 		if(s[i] == c)
-// 			buffer = i;
-// 		i++;
-// 	}
-// 	if(buffer == 0)
-// 		return (0);
-// 	return buffer;
+char *ft_strrchr(const char *str, int c)
+{
+	int buffer ;
+    int i;
+	buffer = -1;
+    i = 0;
 
-// }
+	while(str[i])
+	{
+		if(str[i] == (char)c)
+			buffer = i;
+		i++;
+	}
+	if(str[i] == (char)c)
+		return ((char *)str + i);
+    if(buffer == -1)
+        return 0;
+    else
+	    return ((char *)str + buffer);
+}

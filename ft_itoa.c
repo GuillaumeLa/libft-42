@@ -38,6 +38,8 @@ char	*ft_itoa(int n)
 	a = 0;
 	len = ft_sizeofint(n);
 	result = malloc((len + 1) * sizeof(char));
+	if(result == NULL)
+		return 0;
 	if (n == 0)
 		result[0] = '0';
 	result[len] = '\0';
