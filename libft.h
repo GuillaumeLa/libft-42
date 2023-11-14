@@ -16,7 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-void *ft_calloc( unsigned int elementCount, unsigned int elementSize);
+
+void *ft_calloc( size_t elementCount, size_t elementSize);
 int	ft_isascii(int c);
 char *ft_itoa(int n); 
 void *ft_memcpy(void *dest, const void *src, unsigned int count);
@@ -35,9 +36,9 @@ int	ft_isalnum(int c);
 int	ft_isdigit(int c);
 char *ft_strrchr(const char *s, int c);
 char *ft_strjoin(char const *s1, char const *s2);
-int ft_strlen(char *str);
+size_t ft_strlen(const char *str);
 char    *ft_strnstr(char *str, char *to_find, int n);
-char *ft_substr(char const *s, unsigned int start,unsigned int len);  
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 void ft_bzero(void *s, unsigned int n);
 int	ft_isalpha(int c);
 int	ft_isprint(int c);

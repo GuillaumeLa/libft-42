@@ -11,19 +11,22 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_memcpy(void *dest, const void *src, unsigned int count)
-{
 
-	unsigned int  i;
+void	*ft_memcpy(void *dest, const void *src, unsigned int count)
+{
+	unsigned int	i;
+	char			*dest_pointed;
+	char			*src_pointed;
+
+	dest_pointed = (char *) dest;
+	src_pointed = (char *) src;
 	i = 0;
-	char *dest_pointed = (char *) dest;
-	char *src_pointed = (char *) src;
-	if(!src && !dest)
-		return 0;
-	while(count != i)
+	if (!src && !dest)
+		return (0);
+	while (count != i)
 	{
 		dest_pointed[i] = src_pointed[i];
 		i++;
 	}
-	return dest;
+	return (dest);
 }

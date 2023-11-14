@@ -12,19 +12,18 @@
 
 #include "libft.h"
 
-void *ft_calloc( size_t elementCount, size_t elementSize )
+void	*ft_calloc( size_t elementCount, size_t elementSize )
 {
-
 	void	*p;
-	if(elementCount == 0 || elementSize == 0)
+
+	if (elementCount == 0 || elementSize == 0)
 	{
 		elementCount = 1;
 		elementSize = 1;
 	}
-	p = malloc(elementCount  * elementSize);
-
-	if(p == NULL)
+	p = malloc(elementCount * elementSize);
+	if (p == NULL)
 		return (NULL);
-	ft_bzero(p,elementCount  * elementSize );
+	ft_bzero(p, elementCount * elementSize);
 	return (p);
 }

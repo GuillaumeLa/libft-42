@@ -11,15 +11,18 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_memchr(const void *s, int c, unsigned int n)
+
+void	*ft_memchr(const void *s, int c, unsigned int n)
 {
-	char *s_point = (char *) s;
-	unsigned int i;
+	char			*s_point;
+	unsigned int	i;
+
 	i = 0;
-	while(i != n)
+	s_point = (char *) s;
+	while (i != n)
 	{
 		if (s_point[i] == (char) c)
-			return ((void * )(s_point + i));
+			return ((void *)(s_point + i));
 		i++;
 	}
 	return (0);

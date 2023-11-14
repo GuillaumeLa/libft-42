@@ -11,16 +11,18 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-void	*ft_memset( void * pointer, int value, unsigned int count )
+
+void	*ft_memset(void *pointer, int value, unsigned int count )
 {
-	unsigned int  i;
+	unsigned int	i;
+	char			*dest_pointed;
 
 	i = 0;
-	char *dest_pointed = (char *) pointer;
-	while(count != i)
+	dest_pointed = (char *) pointer;
+	while (count != i)
 	{
 		dest_pointed[i] = value;
 		i++;
 	}
-	return pointer;
+	return (pointer);
 }
