@@ -22,16 +22,14 @@ clean:
 	rm -f $(OFILES)
 fclean:  
 	rm -f $(NAME)
-
-bonus:  $(OFILES_BONUSES)
-	ar rcs $(NAME) $(OFILES_BONUSES)
-
-
 re: fclean all
-.PHONY : all so clean fclean re
-# so:
-# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(FILES)
-# 	gcc -nostartfiles -shared -o libft.so $(OFILES)
+bonus: $(OFILES) $(OFILES_BONUSES)
+	ar rcs $(NAME) $(OFILES) $(OFILES_BONUSES) 
+
+.PHONY : all so clean fclean re bonus
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(FILES)
+	gcc -nostartfiles -shared -o libft.so $(OFILES)
 
 
 
