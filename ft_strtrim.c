@@ -26,20 +26,19 @@ static int	ft_inset(char charac, char const *set)
 	return (0);
 }
 
-static char *ft_parse(char *result ,const char *chaine,int start,int end )
+static char	*ft_parse(char *result, const char *chaine, int start, int end )
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (start != end)
 	{
-		result[i] =chaine[start];
+		result[i] = chaine[start];
 		i++;
 		start++;
 	}
 	result[i] = 0;
-	return result;
-
-	
+	return (result);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -48,23 +47,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	char	*result;
 
-	if(s1 == NULL || set == NULL)
-		return NULL;
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	start = 0;
 	end = ft_strlen(s1);
-	while(ft_inset(s1[start],set))
+	while (ft_inset(s1[start], set))
 		start++;
-	while(ft_inset(s1[end - 1],set))
+	while (ft_inset(s1[end - 1], set))
 		end--;
-	if(end - start < 0 )
+	if (end - start < 0)
 	{
-		start =0;
+		start = 0;
 		end = 0;
 	}
-
-	result = (char *) malloc((end- start + 1 ) * sizeof(char));
-	if(!result)
-		return 0;
-	result = ft_parse(result,s1,start,end);
+	result = (char *) malloc((end - start + 1) * sizeof(char));
+	if (!result)
+		return (0);
+	result = ft_parse(result, s1, start, end);
 	return (result);
 }

@@ -19,7 +19,7 @@ $(NAME): $(OFILES)
 
 all: $(NAME) clean
 clean:
-	rm -f $(OFILES)
+	rm -f $(OFILES) $(OFILES_BONUSES) 
 fclean:  
 	rm -f $(NAME)
 re: fclean all
@@ -28,8 +28,8 @@ bonus: $(OFILES) $(OFILES_BONUSES)
 
 .PHONY : all so clean fclean re bonus
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(FILES)
-	gcc -nostartfiles -shared -o libft.so $(OFILES)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(FILES) $(BONUSES)
+	gcc -nostartfiles -shared -o libft.so $(OFILES) $(OFILES_BONUSES)
 
 
 
