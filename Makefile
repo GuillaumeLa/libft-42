@@ -9,6 +9,7 @@ NAME=libft.a
 OFILES = $(FILES:.c=.o)
 BONUSES=ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
 ft_lstclear.c ft_lstiter.c ft_lstmap.c
+OFILES_BONUSES = $(BONUSES:.c=.o)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -21,6 +22,10 @@ clean:
 	rm -f $(OFILES)
 fclean:  
 	rm -f $(NAME)
+
+bonus:  $(OFILES_BONUSES)
+	ar rcs $(NAME) $(OFILES_BONUSES)
+
 
 re: fclean all
 .PHONY : all so clean fclean re
