@@ -10,76 +10,69 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-// #include <stdio.h>
+#include "libft.h"
+#include <stdio.h>
 
-// static int	count_words(char const *str, char c)
-// {
-// 	int	i;
-// 	int	trigger;
-// 	int	count;
+static void	ft_allocate(char **tab, char const *s, char sep)
+{
+	char		**tab_p;
+	char const	*tmp;
 
-// 	i = 0;
-// 	count = 0;
-// 	trigger = 0;
-// 	while (str[i])
-// 	{
-// 		if (str[i] != c && trigger == 0)
-// 		{
-// 			trigger = 1;
-// 			count++;
-// 		}
-// 		else if (str[i] == c)
-// 			trigger = 0;
-// 		i++;
-// 	}
-// 	printf("%d\n",count);
-// 	return (count);
-// }
+	tmp = s;
+	tab_p = tab;
+	while (*tmp)
+	{
+		while (*s == sep)
+			++s;
+		tmp = s;
+		while (*tmp && *tmp != sep)
+			++tmp;
+		if (*tmp == sep || tmp > s)
+		{
+			*tab_p = ft_substr(s, 0, tmp - s);
+			s = tmp;
+			++tab_p;
+		}
+	}
+	*tab_p = NULL;
+}
 
-// static char	*handle_word(char const *str, int start, int finish)
-// {
-// 	char	*word;
-// 	int		i;
+static int	ft_count_words(char const *s, char sep)
+{
+	int	word_count;
 
-// 	i = 0;
-// 	word = malloc((finish - start + 1) * sizeof(char));
-// 	while (start < finish)
-// 		word[i++] = str[start++];
-// 	word[i] = '\0';
-// 	//printf("%s\n",word);
-// 	return (word);
-// }
+	word_count = 0;
+	while (*s)
+	{
+		while (*s == sep)
+			++s;
+		if (*s)
+			++word_count;
+		while (*s && *s != sep)
+			++s;
+	}
+	return (word_count);
+}
 
-// char	**ft_split(char const *str, char c)
-// {
-// 	char			**result;
-// 	unsigned int	i;
-// 	unsigned int	j;
-// 	int				index;
-// 	int				trigger;
+char	**ft_split(char const *s, char c)
+{
+	char	**new;
+	int		size;
 
-// 	i = 0;
-// 	j = 0;
-// 	if (!str[0])
-// 		return (0);
-
-// 	trigger = 0;
-// 	result = malloc((count_words(str, c) + 1) * sizeof(char *));
-// 	if (result == NULL)
-// 		return (0);
-// 	while (str[i])
-// 	{
-		
-// 	}
-// 	result[j] = 0;
-// 	return (result);
-// }
+	if (!s)
+		return (NULL);
+	size = ft_count_words(s, c);
+	new = (char **)malloc(sizeof(char *) * (size + 1));
+	if (!new)
+		return (NULL);
+	ft_allocate(new, s, c);
+	return (new);
+}
 
 // int main()
 // {
 // 	int i;
-// 	char *str = "                  olol";
+// 	char *str = "olol";
 // 	char **result  = ft_split(str, ' ');
 // 	while(i != 5)
 // 	{
