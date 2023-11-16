@@ -17,6 +17,8 @@ void	ft_putendl_fd(char *str, int fd)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return ;
 	while (str[i])
 	{
 		ft_putchar_fd(str[i], fd);
