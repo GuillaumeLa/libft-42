@@ -11,16 +11,17 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    int count = 0;
-    if(!lst)
-        return(0);
-    while(lst->next)
-    {
-        count++;
-        lst = lst->next;
-    }
-    return (lst);
-}
+	int	count;
 
+	count = 0;
+	if (!lst)
+		return (0);
+	while (lst->next)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (lst);
+}

@@ -9,14 +9,18 @@
 /*   Updated: 2023/11/14 13:21:17 by glabaden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    if(*lst){
-        t_list *last;
-        last = ft_lstlast(*lst);
-        last->next = new;
-    }else 
-        *lst = new;
+	t_list	*last;
+
+	if (*lst)
+	{
+		last = ft_lstlast(*lst);
+		last->next = new;
+	}
+	else
+		*lst = new;
 }
